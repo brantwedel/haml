@@ -4,7 +4,7 @@ module Haml
     # Rails's asset helpers to be used inside Haml Sass filter.
     class SassRailsTemplate < ::Sass::Rails::SassTemplate
       def render(scope=Object.new, locals={}, &block)
-        scope = ::Rails.application.assets.context_class.new(::Rails.application.assets, "", "#{Rails.root}/app/assets/stylesheets")
+        scope = ::Rails.application.assets.context_class.new(::Rails.application.assets, "/", "/")#{Rails.root}/app/assets/stylesheets")
         super
       end
 
